@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.nk.ntalk",
+  "variantName": "release",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 4404,
+      "versionName": "4.4.4",
+      "outputFile": "linphone-android-release-4.4.4.apk"
+    }
+  ],
+  "elementType": "File"
+}

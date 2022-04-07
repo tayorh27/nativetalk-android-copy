@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorH">
+
+    <RelativeLayout
+        android:id="@+id/dialer"
+        android:layout_width="300dp"
+        android:layout_height="460dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:background="@color/colorH"
+        android:visibility="gone"></RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/address_bar"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_alignParentTop="true"
+        android:background="@color/cardview_light_background">
+
+        <TextView
+            android:id="@+id/contact_name_display"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text=""
+            android:textColor="@color/black"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:id="@+id/add_contact"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="60dp"
+            android:contentDescription="@string/content_description_add_contact"
+            android:src="@drawable/add_contact_icon" />
+
+        <org.linphone.dialer.views.AddressText
+            android:id="@+id/address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/add_contact"
+            android:background="@color/transparent"
+            android:backgroundTint="@color/transparent"
+            android:ellipsize="start"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:layout_marginBottom="30dp"
+            android:hint="@string/address_bar_hint"
+            android:inputType="textEmailAddress"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:textAlignment="center"
+            android:textColor="#000"
+            android:textColorHint="#000"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <include layout="@layout/numpad"
+        android:id="@+id/numpad"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/controls"
+        android:layout_below="@id/address_bar"
+        android:layout_centerInParent="true"
+        android:padding="10dp" />
+
+<!--    <ImageView-->
+<!--        android:layout_width="200dp"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:layout_marginTop="60dp"-->
+<!--        android:src="@drawable/logo2" />-->
+
+    <RelativeLayout
+        android:id="@+id/controls"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="20dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/call"
+            android:adjustViewBounds="true"
+            android:focusable="true">
+
+<!--            <ImageView-->
+<!--                android:id="@+id/add_contact"-->
+<!--                android:layout_width="32dp"-->
+<!--                android:layout_height="32dp"-->
+<!--                android:layout_marginLeft="15dp"-->
+<!--                android:layout_marginTop="15dp"-->
+<!--                android:contentDescription="@string/content_description_add_contact"-->
+<!--                android:src="@drawable/contact_add_button" />-->
+
+        </RelativeLayout>
+
+        <org.linphone.call.views.CallButton
+            android:id="@+id/call"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_centerInParent="true"
+            android:src="@drawable/dial_btn"
+            android:background="@drawable/dial_btn"
+            android:contentDescription="@string/content_description_call"
+            android:visibility="visible"
+            android:padding="0dp" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/call"
+            android:adjustViewBounds="true"
+            android:focusable="true">
+
+            <org.linphone.dialer.views.EraseButton
+                android:id="@+id/erase"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginLeft="60dp"
+                android:layout_marginTop="15dp"
+                android:contentDescription="@string/content_description_backspace"
+                android:src="@drawable/backspace_btn" />
+
+    </RelativeLayout>
+
+</RelativeLayout>
+</RelativeLayout>

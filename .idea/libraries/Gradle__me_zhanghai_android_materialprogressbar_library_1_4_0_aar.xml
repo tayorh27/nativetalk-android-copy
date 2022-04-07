@@ -1,0 +1,22 @@
+<component name="libraryTable">
+  <library name="Gradle: me.zhanghai.android.materialprogressbar:library:1.4.0@aar">
+    <ANNOTATIONS>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/a0d0d630a6f641533fcb8cea14b5b25e/transformed/jetified-library-1.4.0/annotations.zip!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2e887d68bd6c441dc7c57367a5cb02c9/transformed/jetified-library-1.4.0/annotations.zip!/" />
+    </ANNOTATIONS>
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/a0d0d630a6f641533fcb8cea14b5b25e/transformed/jetified-library-1.4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a0d0d630a6f641533fcb8cea14b5b25e/transformed/jetified-library-1.4.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/a0d0d630a6f641533fcb8cea14b5b25e/transformed/jetified-library-1.4.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2e887d68bd6c441dc7c57367a5cb02c9/transformed/jetified-library-1.4.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/2e887d68bd6c441dc7c57367a5cb02c9/transformed/jetified-library-1.4.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/2e887d68bd6c441dc7c57367a5cb02c9/transformed/jetified-library-1.4.0/res" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.zhanghai.android.materialprogressbar/library/1.4.0/1919163f2805947115f6fb7086f435533833eb4/library-1.4.0-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/me.zhanghai.android.materialprogressbar/library/1.4.0/d518e296d1e67576916497bcecc2c7ca16db6467/library-1.4.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>

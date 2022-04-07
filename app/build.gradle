@@ -1,0 +1,241 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+//org.linphone
+static def getPackageName() {
+    return "com.nk.ntalk"
+}
+
+static def firebaseEnabled() {
+    File googleFile = new File('app/google-services.json')
+    return googleFile.exists()
+}
+
+task getGitVersion() {
+    def gitVersion = "4.4.4"
+    def gitVersionStream = new ByteArrayOutputStream()
+    def gitCommitsCount = new ByteArrayOutputStream()
+    def gitCommitHash = new ByteArrayOutputStream()
+
+    try {
+        exec {
+            executable "git" args "describe", "--abbrev=0"
+            standardOutput = gitVersionStream
+        }
+        exec {
+            executable "git" args "rev-list", gitVersionStream.toString().trim() + "..HEAD", "--count"
+            standardOutput = gitCommitsCount
+        }
+        exec {
+            executable "git" args "rev-parse", "--short", "HEAD"
+            standardOutput = gitCommitHash
+        }
+
+        if (gitCommitsCount.toString().toInteger() == 0) {
+            gitVersion = gitVersionStream.toString().trim()
+        } else {
+            gitVersion = gitVersionStream.toString().trim() + "." + gitCommitsCount.toString().trim() + "+" + gitCommitHash.toString().trim()
+        }
+        println("Git version: " + gitVersion)
+    } catch (Exception e) {
+        println("Git not found")
+    }
+    project.version = gitVersion
+}
+
+configurations {
+	customImpl.extendsFrom(implementation)
+}
+
+task linphoneSdkSource() {
+    doLast {
+        configurations.customImpl.getIncoming().each {
+            it.getResolutionResult().allComponents.each {
+                if (it.id.getDisplayName().contains("linphone-sdk-android")) {
+                    println 'Linphone SDK used is ' + it.moduleVersion.version + ' from ' + it.properties["repositoryName"]
+                }
+            }
+        }
+    }
+}
+
+///// Exclude Files /////
+
+def excludeFiles = []
+if (!firebaseEnabled()) {
+    excludeFiles.add('**/Firebase*')
+    println '[Push Notification] Firebase disabled'
+}
+// Remove or comment if you want to use those
+excludeFiles.add('**/XmlRpc*')
+excludeFiles.add('**/InAppPurchase*')
+
+def excludePackage = []
+
+excludePackage.add('**/gdb.*')
+excludePackage.add('**/libopenh264**')
+excludePackage.add('**/**tester**')
+excludePackage.add('**/LICENSE.txt')
+
+/////////////////////////
+
+repositories {
+    maven {
+        name "local linphone-sdk maven repository"
+        url file(LinphoneSdkBuildDir + '/maven_repository/')
+    }
+    maven {
+        name "linphone.org maven repository"
+        url "https://linphone.org/maven_repository"
+    }
+}
+
+project.tasks['preBuild'].dependsOn 'getGitVersion'
+project.tasks['preBuild'].dependsOn 'linphoneSdkSource'
+
+android {
+    lintOptions {
+        abortOnError false
+    }
+
+    compileSdkVersion 31
+    defaultConfig {
+        minSdkVersion 23
+        targetSdkVersion 31
+        versionCode 4404
+        versionName "${project.version}"
+        applicationId getPackageName()
+        multiDexEnabled true
+    }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            outputFileName = "linphone-android-${variant.buildType.name}-${project.version}.apk"
+        }
+
+        // https://developer.android.com/studio/releases/gradle-plugin#3-6-0-behavior for extractNativeLibs
+        if (variant.buildType.name == "release") {
+            variant.getMergedFlavor().manifestPlaceholders = [linphone_address_mime_type: "vnd.android.cursor.item/vnd." + getPackageName() + ".provider.sip_address",
+                                    linphone_file_provider: getPackageName() + ".provider",
+                                    extractNativeLibs: "false"]
+        } else {
+            variant.getMergedFlavor().manifestPlaceholders = [linphone_address_mime_type: "vnd.android.cursor.item/vnd." + getPackageName() + ".provider.sip_address",
+                                    linphone_file_provider: getPackageName() + ".debug.provider",
+                                    extractNativeLibs: "true"]
+        }
+    }
+
+    def keystorePropertiesFile = rootProject.file("keystore.properties")
+    def keystoreProperties = new Properties()
+    keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+
+    signingConfigs {
+        release {
+            storeFile file(keystoreProperties['storeFile'])
+            storePassword keystoreProperties['storePassword']
+            keyAlias keystoreProperties['keyAlias']
+            keyPassword keystoreProperties['keyPassword']
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+            resValue "string", "sync_account_type", getPackageName() + ".sync"
+            resValue "string", "file_provider", getPackageName() + ".provider"
+            resValue "string", "linphone_address_mime_type", "vnd.android.cursor.item/vnd." + getPackageName() + ".provider.sip_address"
+
+            if (!firebaseEnabled()) {
+                resValue "string", "nt_nt_gcm_defaultSenderId", "none"
+            }
+        }
+        debug {
+            applicationIdSuffix //".debug"
+            debuggable true
+            jniDebuggable true
+
+            resValue "string", "sync_account_type", getPackageName() + ".sync"
+            resValue "string", "file_provider", getPackageName() + ".debug.provider"
+            resValue "string", "linphone_address_mime_type", "vnd.android.cursor.item/vnd." + getPackageName() + ".provider.sip_address"
+
+            if (!firebaseEnabled()) {
+                resValue "string", "nt_nt_gcm_defaultSenderId", "none"
+            }
+        }
+    }
+
+    sourceSets {
+        main {
+            java.excludes = excludeFiles
+
+            packagingOptions {
+                excludes = excludePackage
+            }
+        }
+    }
+
+    packagingOptions {
+        pickFirst 'META-INF/NOTICE'
+        pickFirst 'META-INF/LICENSE'
+        exclude 'META-INF/MANIFEST.MF'
+    }
+}
+
+dependencies {
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    implementation 'androidx.asynclayoutinflater:asynclayoutinflater:1.0.0'
+    implementation 'com.google.android.gms:play-services-base:18.0.1'
+    implementation 'com.google.android.material:material:1.4.0'
+//    implementation "com.androidx.support:support-core-utils:28.0.0"
+    compileOnly 'org.jetbrains:annotations:19.0.0'
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
+    implementation 'com.google.firebase:firebase-analytics'
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'androidx.media:media:1.5.0'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'com.google.android:flexbox:1.1.0'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.google.firebase:firebase-firestore:24.0.1'
+    implementation 'com.google.firebase:firebase-auth:21.0.1'
+    implementation 'com.google.firebase:firebase-database:20.0.3'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.browser:browser:1.2.0'
+    implementation 'uk.co.chrisjenx:calligraphy:2.2.0'
+    implementation 'com.stripe:stripe-android:6.1.2'
+    implementation "androidx.multidex:multidex:2.0.1"
+    implementation 'com.weiwangcn.betterspinner:library-material:1.1.0'
+    implementation 'com.afollestad.material-dialogs:core:0.9.4.4'
+    implementation 'com.afollestad.material-dialogs:commons:0.9.4.4'
+    implementation 'com.squareup.okhttp3:okhttp:3.10.0'
+    implementation 'com.beardedhen:androidbootstrap:2.3.1'
+    implementation 'com.mcxiaoke.volley:library:1.0.19'
+    implementation 'com.hbb20:ccp:2.2.2'
+//    implementation 'com.github.ekimual:country-picker-x:1.0.0'
+    implementation 'co.paystack.android:paystack:3.0.10'
+    implementation "org.linphone:linphone-sdk-android:4.5+"
+}
+
+task generateContactsXml(type: Copy) {
+    from 'contacts.xml'
+    into "src/main/res/xml/"
+    filter {
+        line -> line
+                .replaceAll('%%AUTO_GENERATED%%', 'This file has been automatically generated, do not edit or commit !')
+                .replaceAll('%%PACKAGE_NAME%%', getPackageName())
+
+    }
+}
+project.tasks['preBuild'].dependsOn 'generateContactsXml'
+
+//apply plugin: "com.diffplug.gradle.spotless"
+//spotless {
+//    java {
+//        target '**/*.java'
+//        googleJavaFormat('1.6').aosp()
+//        removeUnusedImports()
+//    }
+//}
+//project.tasks['preBuild'].dependsOn 'spotlessApply'

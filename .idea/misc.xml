@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="../../../../layout/custom_preview.xml" value="0.27239583333333334" />
+        <entry key="app/src/main/res/drawable/btn_selector.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/footer_bg.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/footer_button.xml" value="0.183" />
+        <entry key="app/src/main/res/drawable/launch_screen.xml" value="0.1985" />
+        <entry key="app/src/main/res/drawable/numpad_one.xml" value="0.1985" />
+        <entry key="app/src/main/res/drawable/numpad_sharp.xml" value="0.1985" />
+        <entry key="app/src/main/res/layout-land/call.xml" value="0.16770833333333332" />
+        <entry key="app/src/main/res/layout-land/dialer.xml" value="0.2046875" />
+        <entry key="app/src/main/res/layout-land/main.xml" value="0.18385416666666668" />
+        <entry key="app/src/main/res/layout-sw533dp-land/dialer.xml" value="0.153515625" />
+        <entry key="app/src/main/res/layout-sw533dp-land/main.xml" value="0.12578125" />
+        <entry key="app/src/main/res/layout-sw533dp/dialer.xml" value="0.13422131147540983" />
+        <entry key="app/src/main/res/layout-sw533dp/main.xml" value="0.12056010928961748" />
+        <entry key="app/src/main/res/layout/about.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_buy_native_talk_number.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_buy_number_menu.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_change_extensions.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_change_password.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_contact_support.xml" value="0.335" />
+        <entry key="app/src/main/res/layout/activity_edit_profile.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_logout_popup.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_manage_native_talk_number.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_native_talk_settings.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_new_extension_generated.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_register.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_register_success.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_share_popup.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_success_mail_sent.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/activity_success_password_change.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/assistant_account_connection.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/assistant_echo_canceller_calibration.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/assistant_generic_connection.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/assistant_menu.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/assistant_remote_configuration.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/assistant_topbar.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/buy_credit_fragment.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_active_header.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_conference_cell.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_conference_header.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_conference_paused_cell.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_incoming.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_incoming_answer_button.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_incoming_decline_button.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_incoming_notification_heads_up.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_outgoing.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_paused_by_remote.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_primary_buttons.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_secondary_buttons.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/layout/call_stats.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_stats_child.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_stats_group.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/call_status_bar.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/chat_bubble.xml" value="0.12447916666666667" />
+        <entry key="app/src/main/res/layout/chat_ephemeral.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/contact_avatar.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/contact_avatar_100.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/contact_avatar_200.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/contact_cell.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/layout/contact_control_cell.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/contact_edit.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/contact_edit_cell.xml" value="0.14583333333333334" />
+        <entry key="app/src/main/res/layout/contact_selected.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/custom_cards_layout.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/custom_customer_logs.xml" value="0.1125" />
+        <entry key="app/src/main/res/layout/dialer.xml" value="0.1598731884057971" />
+        <entry key="app/src/main/res/layout/dialog.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/empty_fragment.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/file_upload_cell.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/history.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/history_cell.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/history_detail.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/history_detail_cell.xml" value="0.12447916666666667" />
+        <entry key="app/src/main/res/layout/in_app.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/in_app_list.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/in_app_purchase_item.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/in_app_store.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/launch_screen.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/main.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/my_account.xml" value="0.25" />
+        <entry key="app/src/main/res/layout/numpad.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/side_menu.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/side_menu_account_cell.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/side_menu_item_cell.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/side_menu_main_account.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/single_row.xml" value="0.1125" />
+        <entry key="app/src/main/res/layout/status_bar.xml" value="0.17798913043478262" />
+        <entry key="app/src/main/res/layout/wait_layout.xml" value="0.17798913043478262" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

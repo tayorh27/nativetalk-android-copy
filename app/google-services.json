@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "533387641712",
+    "project_id": "nativetalkmobileapp",
+    "storage_bucket": "nativetalkmobileapp.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533387641712:android:c1342b37fa2bb6c1ea45b5",
+        "android_client_info": {
+          "package_name": "com.nk.nativetalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533387641712-g27mhgbfog60b1eq9gdtqnup1dbnph5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGMR1pPR5XkUEy37BkUL-G4-dScVQpRIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533387641712-g27mhgbfog60b1eq9gdtqnup1dbnph5k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:533387641712:android:caa7c8c3f7df0132ea45b5",
+        "android_client_info": {
+          "package_name": "com.nk.ntalk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "533387641712-g27mhgbfog60b1eq9gdtqnup1dbnph5k.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGMR1pPR5XkUEy37BkUL-G4-dScVQpRIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "533387641712-g27mhgbfog60b1eq9gdtqnup1dbnph5k.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

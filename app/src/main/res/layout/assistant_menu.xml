@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"-->
+<!--    xmlns:tools="http://schemas.android.com/tools"-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="match_parent"-->
+<!--    android:orientation="vertical"-->
+<!--    android:background="?attr/backgroundColor">-->
+
+<!--    <fragment-->
+<!--        android:id="@+id/status"-->
+<!--        android:name="org.linphone.fragments.StatusBarFragment"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        tools:layout="@layout/status_bar" />-->
+
+<!--    <include-->
+<!--        android:id="@+id/top_bar"-->
+<!--        layout="@layout/assistant_topbar"-->
+<!--        android:visibility="gone"/>-->
+
+<!--    <ScrollView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent">-->
+
+<!--    </ScrollView>-->
+
+<!--</LinearLayout>-->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/new_background_image"
+    android:padding="30dp">
+
+    <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+        android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    style="@style/standard_text_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/welcome"
+                    android:paddingTop="10dp"
+                    android:textAllCaps="true" />
+
+                <TextView
+                    style="@style/standard_small_text_font"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="top"
+                    android:paddingTop="10dp"
+                    android:text="@string/assistant_welcome_desc" />
+
+                <GridLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:columnCount="1">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="fill"
+                        android:layout_columnSpan="1"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:layout_margin="10dp">
+
+                        <CheckBox
+                            android:id="@+id/terms_and_privacy_checkbox"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"/>
+
+                        <TextView
+                            android:id="@+id/terms_and_privacy"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" />
+
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/account_creation"
+                        style="@style/button_font"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:layout_margin="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="fill"
+                        android:layout_columnWeight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/assistant_button"
+                        android:textColor="@drawable/assistant_button_text_color"
+                        android:contentDescription="@string/assistant_create_account"
+                        android:text="@string/assistant_create_account" />
+
+                    <TextView
+                        android:id="@+id/account_connection"
+                        style="@style/button_font"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:layout_margin="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="fill"
+                        android:layout_columnWeight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/assistant_button"
+                        android:textColor="@drawable/assistant_button_text_color"
+                        android:contentDescription="@string/assistant_login_linphone"
+                        android:text="@string/assistant_login_linphone" />
+
+                    <TextView
+                        android:id="@+id/generic_connection"
+                        style="@style/button_font"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:layout_margin="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="fill"
+                        android:layout_columnWeight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/assistant_button"
+                        android:textColor="@drawable/assistant_button_text_color"
+                        android:contentDescription="@string/assistant_login_generic"
+                        android:text="@string/assistant_login_generic" />
+
+                    <TextView
+                        android:id="@+id/remote_configuration"
+                        style="@style/button_font"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:layout_margin="20dp"
+                        android:layout_width="wrap_content"
+                        android:layout_gravity="fill"
+                        android:layout_columnWeight="1"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/assistant_button"
+                        android:textColor="@drawable/assistant_button_text_color"
+                        android:contentDescription="@string/assistant_remote_provisioning"
+                        android:text="@string/assistant_remote_provisioning" />
+
+                </GridLayout>
+
+            </LinearLayout>
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginTop="50dp"
+        android:padding="0dp"
+        android:src="@drawable/welcome_logo" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/login_generic"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/white_button_full"
+            android:contentDescription="@string/assistant_login_generic"
+            android:text="Login with Native talk"
+            android:textAllCaps="false"
+            android:textColor="#2C4D2A"
+            android:textSize="15sp" />
+
+        <Button
+            android:id="@+id/create_account"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/white_button_outline"
+            android:contentDescription="@string/assistant_create_account"
+            android:text="Create a Native talk account"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+
+
+        <Button
+            android:id="@+id/login_linphone"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@drawable/assistant_button"
+            android:contentDescription="@string/assistant_login_linphone"
+            android:text="Login with Nativetalk"
+            android:visibility="gone" />
+
+
+        <Button
+            android:id="@+id/remote_provisioning"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/assistant_button"
+            android:contentDescription="@string/assistant_remote_provisioning"
+            android:text="@string/assistant_remote_provisioning"
+            android:visibility="gone" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/phone_call"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:lineHeight="20dp"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="10dp"
+        android:text="It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/phone_call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Phone Calls\nMade Easy"
+        android:textAlignment="center"
+        android:textColor="@color/cardview_light_background"
+        android:textSize="40sp"
+        android:textStyle="bold" />
+</RelativeLayout>
